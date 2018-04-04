@@ -1,0 +1,72 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]
+  then
+    echo "Expected arguments, please check the help : initdev –help"
+    exit 1
+fi
+
+if [ $# -eq 1 ]
+       then
+
+
+         if [[ $1 == "-help" ]]; 
+then
+echo "- Name   : initdev est une application qui permet de créer un nouveau projet avec des préconfiguration données dans une partie 'fonctionalités', en outre, elle crée une arboressence qui a une certaine architecture spécifié.   
+     - Syntax : ./initdev ProjectName Type-of-arg
+     - arg    : -help : Le help va aider l'utilisateur à bien comprendre le fonctionnement et le lancement du programme initdev.
+                -C : La création du projet en langage C 
+                -C++ : La création du projet en langage c++
+                -latex : En cas d'utilisation d'un éditeur de texte, on vous propose latex ! 
+                -beamer: création du projet beamer.
+ 
+     - author : FERARMA MOUSSA    E-mail : moussaferarma@outlook.com."
+    else
+        mkdir -p $1/{bin,gitignores,sources,}
+        touch $1/main
+        touch $1/license
+        touch $1/makefile
+        touch $1/install.sh
+        exit 0
+    fi
+fi
+
+
+
+  
+    mkdir -p $1/{bin,gitignores,sources}
+    touch $1/LICENSE
+    touch $1/makefile
+    touch $1/install.sh
+
+
+if [ $# -eq 2 ]
+       then
+ if [[ $2 == "-C" ]]; 
+        then
+         cp ./sources/main.c $1/main.c
+        elif [[ $2 == "-CPP" ]]; then
+         cp ./sources/main.cpp $1/main.cpp
+          elif [[ $2 == "-C++" ]]; then
+         cp ./sources/main.cpp $1/main.cpp
+          elif [[ $2 == "-Py" ]]; then
+           cp ./sources/main.py $1/main.py
+           elif  [[ $2 == "-Latex" ]]; then
+         cp ./sources/latexMin.tex $1/main.tex
+           elif [[ $2 == "-BEAMER" ]]; then
+         cp ./sources/beamer.tex $1/main.tex
+           elif [[ $2 == "-GPL" ]]; then
+         cp ./licenses/GPL $1/LICENSE
+	   elif [[ $2 == "-MIT" ]]; then
+	 cp ./licenses/MIT $1/LICENSE
+ 	 else
+
+       
+        echo "Uknown arguments, please check the help : initdev –help"
+          
+        exit 1
+
+  fi
+fi
+  
+
