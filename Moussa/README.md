@@ -1,1 +1,2 @@
-#ProjetManhattan
+                          #ProjetManhattan
+Ce Projet consiste à crée une arboresence de dossier , à l'interieur de chaque dossier on a des fichiers, chacun à une tache , càd si on veut un code en langage C on a qu'à faire appelle à travers le terminal ce code, si on veut un projet pour latex on fait la même chose. initdev à aussi Install.sh le programme qui install l'application , et un Readme suivant que vous êtes entrain de lire en ce moment.
